@@ -1,5 +1,5 @@
 // Set this to your Formspree endpoint (see README.md) to make the signup form live.
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formspree.io/f/xbgrdzgj";
 
 // Add gigs here as they're booked, e.g.:
 // { date: "Sep 12, 2026", venue: "Kuumbwa Jazz Center", city: "Santa Cruz, CA" }
