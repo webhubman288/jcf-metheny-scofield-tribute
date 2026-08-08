@@ -1,0 +1,183 @@
+:root {
+  --navy: #0c1230;
+  --navy-deep: #070a1c;
+  --teal: #3fd0d4;
+  --gold: #f5a623;
+  --magenta: #e0388b;
+  --white: #f7f7fb;
+  --text-muted: #b9bcd6;
+  --max-width: 900px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--navy-deep);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  background: var(--navy-deep);
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--gold), var(--magenta));
+  color: var(--navy-deep);
+  box-shadow: 0 4px 20px rgba(224, 56, 139, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(224, 56, 139, 0.55);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.1rem 1rem;
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a:hover { color: var(--teal); }
+
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.section-alt {
+  max-width: none;
+  background: var(--navy);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#about p { text-align: left; }
+
+.gigs-list { max-width: 700px; margin: 0 auto; }
+
+.gig-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.gig-date { color: var(--gold); font-weight: 700; white-space: nowrap; }
+.gig-venue { color: var(--white); font-weight: 600; }
+.gig-city { color: var(--text-muted); font-size: 0.9rem; }
+
+.signup-section { padding-bottom: 5rem; }
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.signup-form input[type="email"] {
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.signup-form input[type="email"]::placeholder { color: var(--text-muted); }
+.signup-form input[type="email"]:focus { outline: 2px solid var(--teal); }
+
+.form-status {
+  margin-top: 1rem;
+  min-height: 1.5em;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.form-status.error { color: var(--magenta); }
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+  .section h2 { font-size: 1.6rem; }
+  .gig-item { flex-direction: column; align-items: flex-start; }
+}
