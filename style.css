@@ -121,10 +121,9 @@ body {
 
 .gig-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.5rem;
   margin-bottom: 0.75rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -132,9 +131,32 @@ body {
   text-align: left;
 }
 
-.gig-date { color: var(--gold); font-weight: 700; white-space: nowrap; }
-.gig-venue { color: var(--white); font-weight: 600; }
-.gig-city { color: var(--text-muted); font-size: 0.9rem; }
+.gig-when {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.gig-date { color: var(--gold); font-weight: 700; }
+.gig-time { color: var(--teal); font-weight: 600; }
+
+.gig-where {
+  display: flex;
+  flex-direction: column;
+}
+
+.gig-venue { color: var(--white); font-weight: 700; font-size: 1.1rem; }
+.gig-address { color: var(--text-muted); font-size: 0.9rem; }
+
+.gig-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.gig-note a { color: var(--teal); font-style: normal; text-decoration: none; }
+.gig-note a:hover { text-decoration: underline; }
 
 .signup-section { padding-bottom: 5rem; }
 
