@@ -47,7 +47,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 2%;
+  bottom: 1.5%;
   display: flex;
   justify-content: center;
 }
@@ -58,10 +58,16 @@ body {
   border-radius: 999px;
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
   border: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-hero {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.85rem;
 }
 
 .btn-lg {
@@ -70,16 +76,25 @@ body {
 }
 
 .btn-glow {
-  animation: btn-glow-pulse 2.2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes btn-glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px 2px rgba(245, 166, 35, 0.5), 0 0 22px 6px rgba(224, 56, 139, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 24px 8px rgba(245, 166, 35, 0.9), 0 0 46px 16px rgba(224, 56, 139, 0.65);
-  }
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  transform: skewX(-20deg);
+  animation: btn-shimmer 3.5s ease-in-out infinite;
+}
+
+@keyframes btn-shimmer {
+  0%, 25% { left: -60%; }
+  60%, 100% { left: 140%; }
 }
 
 .btn-primary {
